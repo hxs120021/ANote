@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/left"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"/>
+        <TextView
+            android:id="@+id/tv_whoSubarea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:layout_toRightOf="@+id/left"
+            android:gravity="center_vertical"
+            android:text="分区名称"/>
+    </RelativeLayout>
+</LinearLayout>

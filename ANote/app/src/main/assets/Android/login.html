@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./css/main.css">
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="./js/jquery-3.2.1.min.js"></script>
+<body>
+    <section id="bck">
+    </section>
+    <section id="icon">
+        <img id="icon-1" src="./img/6.png">
+    </section>
+    <section id="forms">
+            <span class="input input--hoshi">
+					<input class="input__field input__field--hoshi" type="text" id="input-4" value="1523111041" />
+					<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-4">
+						<span class="input__label-content input__label-content--hoshi">Account</span>
+            </label>
+            </span>
+            <span class="input input--hoshi">
+					<input class="input__field input__field--hoshi" id="input-5" type="password" value="961108" />
+					<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5">
+						<span class="input__label-content input__label-content--hoshi">Password</span>
+            </label>
+            </span>
+        <div>
+            <button href="#" id="login_" class="button big blue">Login</button>
+        </div>
+        <div>
+            <a href="#" class="register_">注册新用户</a>
+        </div>
+    </section>
+    <section id="forms2">
+        <div>
+            <span class="input input--hoshi">
+					<input class="input__field input__field--hoshi" type="text" id="use" />
+					<label class="input__label input__label--hoshi input__label--hoshi-color-1">
+						<span class="input__label-content input__label-content--hoshi">Account</span>
+            </label>
+            </span>
+            <span class="input input--hoshi">
+					<input class="input__field input__field--hoshi" type="password" id="psd" />
+					<label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5">
+						<span class="input__label-content input__label-content--hoshi">Password</span>
+            </label>
+            </span>
+        </div>
+        <div>
+            <button id="register_" class="button big blue">Register</button>
+        </div>
+        <div>
+            <a href="#" class="back_">返回</a>
+        </div>
+    </section>
+    <section id="btm">
+
+    </section>
+    <script type="text/javascript" src="./js/regiserandlogin.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/re.js"></script>
+    <script>
+        (function() {
+            // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+            if (!String.prototype.trim) {
+                (function() {
+                    // Make sure we trim BOM and NBSP
+                    var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                    String.prototype.trim = function() {
+                        return this.replace(rtrim, '');
+                    };
+                })();
+            }
+
+            [].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
+                // in case the input is already filled..
+                if (inputEl.value.trim() !== '') {
+                    classie.add(inputEl.parentNode, 'input--filled');
+                }
+
+                // events:
+                inputEl.addEventListener('focus', onInputFocus);
+                inputEl.addEventListener('blur', onInputBlur);
+            });
+
+            function onInputFocus(ev) {
+                classie.add(ev.target.parentNode, 'input--filled');
+            }
+
+            function onInputBlur(ev) {
+                if (ev.target.value.trim() === '') {
+                    classie.remove(ev.target.parentNode, 'input--filled');
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

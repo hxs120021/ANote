@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+<title>引导页</title>
+<link rel="stylesheet" href="css/framework7.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body id="mobile_wrap">
+    <div class="views">
+
+      <div class="view view-main">
+
+        <div class="pages navbar-through toolbar-through">
+
+          <div data-page="index" class="page homepage">
+            <div class="page-content">
+
+                  <!-- Slider -->
+                  <div class="swiper-container swiper-init" data-effect="coverflow" data-pagination=".swiper-pagination">
+                    <div class="swiper-wrapper">
+                    
+                      <div class="swiper-slide">
+                          <span>离线缓存</span>
+                          <span class="subtitle">这是第一页</span>
+                          <!-- <a href="about.html" class="swiper_read_more">swipe to see more</a>  -->                     </div>
+                      <div class="swiper-slide">
+                          <span>自动云端同步</span>
+                          <span class="subtitle">这是第二页</span>
+                          <!-- <a href="features.html" class="swiper_read_more">see all features</a>  -->                     </div>
+                      <div class="swiper-slide">
+                          <span>简洁、高效</span>
+                          <span class="subtitle">这是第三页</span>
+                          <a href="javascript:" onClick="window.open('http:start')" class="swiper_read_more">开启APP之旅</a>
+                                                </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>
