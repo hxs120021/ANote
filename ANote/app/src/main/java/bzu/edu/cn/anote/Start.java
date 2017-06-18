@@ -39,9 +39,9 @@ public class Start extends AppCompatActivity {
         new Handler().postDelayed(()->{
             ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
             NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            if(networkInfo == null || !networkInfo.isAvailable())
-                Toast.makeText(Start.this, "没网", Toast.LENGTH_SHORT).show();
-            else Toast.makeText(Start.this, "有网", Toast.LENGTH_SHORT).show();
+//            if(networkInfo == null || !networkInfo.isAvailable())
+//                Toast.makeText(Start.this, "没网", Toast.LENGTH_SHORT).show();
+//            else Toast.makeText(Start.this, "有网", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Start.this, MainActivity2.class);
             Start.this.startActivity(intent);
             Start.this.finish();

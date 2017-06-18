@@ -308,21 +308,26 @@ public class HomePage extends AppCompatActivity implements AbsListView.OnScrollL
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                    try {
-                            new Thread() {
-                                @Override
-                                public void run() {
-                                    try {
-                                        uploadRecords.cre(context);
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
+                try {
+                    if(!UploadRecords.list.isEmpty())
+                    {
+                        new Thread() {
+                            @Override
+                            public void run() {
+                                try {
+                                    uploadRecords.cre(context);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
                                 }
-                            }.start();
-                            donRecord.run(name);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                            }
+                        }.start();
                     }
+                    if(UploadRecords.list.isEmpty()){
+                        donRecord.run(name);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                     notesnameList = notesnamedao.query(name);  //根据用户名从notesname表里查询
                     notesNameAdapter = new NotesNameAdapter(context, R.layout.notes_item, notesnameList);  //适配
                     lv_notes.setAdapter(notesNameAdapter);  //listview控件适配
@@ -330,15 +335,4 @@ public class HomePage extends AppCompatActivity implements AbsListView.OnScrollL
             }
         });
     }
-    /**
-     * 设置网络监听
-     */
-//    private void setBreoadcast() {
-//        BroadcastReceiver receiver=new NetBroadCastReciver();
-//        IntentFilter filter=new IntentFilter();
-//        filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
-//        filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
-//        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-//        registerReceiver(receiver, filter);
-//    }
 }

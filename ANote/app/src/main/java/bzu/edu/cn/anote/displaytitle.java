@@ -248,7 +248,6 @@ public class displaytitle extends AppCompatActivity implements AbsListView.OnScr
                 try {
                     if(!UploadRecords.list.isEmpty())
                     {
-                        System.out.println("哈哈哈aaa");
                         new Thread() {
                             @Override
                             public void run() {

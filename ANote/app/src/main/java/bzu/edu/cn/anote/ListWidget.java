@@ -68,11 +68,11 @@ public class ListWidget extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
 
         super.onReceive(context, intent);
-        Toast.makeText(context, intent.getAction(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, intent.getAction(), Toast.LENGTH_SHORT).show();
 
         String action = intent.getAction();
         if(action.equals(refrashAction)){
-            Toast.makeText(context, "refrash", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "refrash", Toast.LENGTH_SHORT).show();
             ReFactory.resdata.clear();
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             ComponentName cn = new ComponentName(context, ListWidget.class);
@@ -100,7 +100,7 @@ public class ListWidget extends AppWidgetProvider {
             startIntent.putExtra("id", viewIndex + 1);
             context.startActivity(startIntent);
 
-            Toast.makeText(context, "" + appWidgetId + "  " + viewIndex, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "" + appWidgetId + "  " + viewIndex, Toast.LENGTH_SHORT).show();
 
         }
     }
