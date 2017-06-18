@@ -57,24 +57,24 @@ public class DonRecord {
                 tongBu.insert1(a,b,c);
             }
             for(int i = 0;i<jsonArray2.size();i++){
-                a = (JSONObject.fromObject(jsonArray.get(i))).getString("id");
-                c = (JSONObject.fromObject(jsonArray.get(i))).getString("user");
+                a = (JSONObject.fromObject(jsonArray2.get(i))).getString("id");
+                c = (JSONObject.fromObject(jsonArray2.get(i))).getString("user");
                 System.out.println(jsonArray2.size());
-                b = (JSONObject.fromObject(jsonArray.get(i))).getString("subarea");
+                b = (JSONObject.fromObject(jsonArray2.get(i))).getString("subarea");
 
-                d = (JSONObject.fromObject(jsonArray.get(i))).getString("notesname");
+                d = (JSONObject.fromObject(jsonArray2.get(i))).getString("notesname");
                 tongBu.insert2(a,b,c,d);
             }
 
             for(int i = 0;i<jsonArray3.size();i++){
-                a = (JSONObject.fromObject(jsonArray.get(i))).getString("id");
-                b = (JSONObject.fromObject(jsonArray.get(i))).getString("title");
-                c = (JSONObject.fromObject(jsonArray.get(i))).getString("user");
-                d = (JSONObject.fromObject(jsonArray.get(i))).getString("notesname");
-                e = (JSONObject.fromObject(jsonArray.get(i))).getString("subarea");
-                f = (JSONObject.fromObject(jsonArray.get(i))).getString("content");
-                j = (JSONObject.fromObject(jsonArray.get(i))).getString("data");
-                k = (JSONObject.fromObject(jsonArray.get(i))).getString("time");
+                a = (JSONObject.fromObject(jsonArray3.get(i))).getString("id");
+                b = (JSONObject.fromObject(jsonArray3.get(i))).getString("title");
+                c = (JSONObject.fromObject(jsonArray3.get(i))).getString("user");
+                d = (JSONObject.fromObject(jsonArray3.get(i))).getString("notesname");
+                e = (JSONObject.fromObject(jsonArray3.get(i))).getString("subarea");
+                f = (JSONObject.fromObject(jsonArray3.get(i))).getString("content");
+                j = (JSONObject.fromObject(jsonArray3.get(i))).getString("data");
+                k = (JSONObject.fromObject(jsonArray3.get(i))).getString("time");
                 tongBu.insert3(a,b,c,d,e,f,j,k);
             }
     }
